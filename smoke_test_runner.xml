@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Smoke tests" verbose="2">
+
+	<test name="Login smoke tests">
+		<classes>
+			<class name="com.fifa.tests.StatisticsTest">
+			</class>
+		</classes>
+	</test>
+
+
+
+</suite>
