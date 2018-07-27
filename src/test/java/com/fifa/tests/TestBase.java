@@ -10,10 +10,12 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.fifa.pages.GroupsPage;
 import com.fifa.utilities.BrowserUtils;
 import com.fifa.utilities.ConfigurationReader;
 import com.fifa.utilities.Driver;
@@ -56,6 +58,7 @@ public abstract class TestBase {
 		driver.get(ConfigurationReader.getProperty("url"));
 
 	}
+
 
 	@AfterMethod(alwaysRun = true)
 	public void tearDown(ITestResult result) throws IOException {
