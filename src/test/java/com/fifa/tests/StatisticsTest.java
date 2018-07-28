@@ -16,10 +16,10 @@ import com.fifa.utilities.Driver;
 
 public class StatisticsTest extends TestBase {
 
-	@Test(priority = 1, groups= {"smoke"})
+	@Test(groups= {"smoke"})
 	public void pageVerification() {
 		// name of the test
-		extentLogger = report.createTest("FIFA website verification test");
+		extentLogger = report.createTest("Test3");
 		// info ()  --> to print a message
 		extentLogger.info("Verifying FIFA Website Title");
 		
@@ -36,28 +36,7 @@ public class StatisticsTest extends TestBase {
 		extentLogger.pass("Page title verified");
 	}
 
-	@Test(priority = 2, groups= {"smoke"})
-	public void pageVerification2() {
-		// name of the test
-		extentLogger = report.createTest("FIFA website verification test 2");
-		// info ()  --> to print a message
-		extentLogger.info("Verifying FIFA Website Title");
-		
-		HomePage homePage = new HomePage();
-		homePage.headerMenuStatistics.click();
-		
-		StatisticsPage statisticsPage = new StatisticsPage();
-				
-		String expected = "2018 FIFA World Cup Russia™ - FIFA.dom";
-		System.out.println(Driver.getDriver().getTitle());
-		
-		assertEquals(Driver.getDriver().getTitle(), expected);
-		assertEquals(Driver.getDriver().getTitle(), expected);
-		assertEquals(Driver.getDriver().getTitle(), expected);
-		// pass --> message the tells us what passed
-		extentLogger.pass("Page title verified");
-	}
-	
+
 	
 
 }

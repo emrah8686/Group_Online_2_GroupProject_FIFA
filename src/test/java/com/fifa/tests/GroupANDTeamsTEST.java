@@ -12,29 +12,33 @@ import org.testng.annotations.Test;
 import com.fifa.pages.GroupsPage;
 
 public class GroupANDTeamsTEST extends TestBase {
-	
-	@Test(priority = 1, groups= {"smoke"})
+
+	@Test(groups = { "smoke" })
 	public void checkGroupG() {
+		extentLogger = report.createTest("Test 1");
+
 		GroupsPage g = new GroupsPage();
+
+		assertTrue(g.groupIcon.isDisplayed());
+
 		g.groupIcon.click();
-		 assertTrue(g.groupGicon.isDisplayed());
-		 Boolean b =g.groupGicon.isDisplayed();
-		 
-		g.groupGicon.click();
+		
 		assertEquals(g.Belg.getText(), "Belgium");
 		assertEquals(g.Engl.getText(), "England");
 		assertEquals(g.Tuns.getText(), "Tunisia");
 		assertEquals(g.Pana.getText(), "Panama");
-	
-		}
-	@Test(priority = 2, groups= {"smoke"})
+		extentLogger.pass("Page title verified");
+
+	}
+
+	@Test(groups = { "smoke" })
 	public void checkAllTeam() {
+		extentLogger = report.createTest("Test 2");
 		GroupsPage g = new GroupsPage();
 		g.teamMain.click();
 		assertEquals(g.allTeam.size(), 32);
-		assertFalse(g.Belg.isDisplayed());
-		
-		
-		
+		extentLogger.pass("Page title verified");
+
+
 	}
 }

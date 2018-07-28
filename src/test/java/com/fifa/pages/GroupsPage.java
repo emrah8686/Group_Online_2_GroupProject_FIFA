@@ -37,7 +37,7 @@ public class GroupsPage {
 	@FindBy(xpath="//td[contains(@class,'fi-table__teamname teamname-nolink')]//span[contains(@class,'fi-t__nText')][contains(text(),'Panama')]")
 	public WebElement Pana;
 	
-
+	//
 
 
 }
