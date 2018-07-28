@@ -1,6 +1,7 @@
 package com.fifa.tests;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import java.util.List;
@@ -31,6 +32,8 @@ public class GroupANDTeamsTEST extends TestBase {
 		GroupsPage g = new GroupsPage();
 		g.teamMain.click();
 		assertEquals(g.allTeam.size(), 32);
+		assertFalse(g.Belg.isDisplayed());
+		
 		
 		
 	}
