@@ -28,10 +28,10 @@ public class StatisticsTest extends TestBase {
 		
 		StatisticsPage statisticsPage = new StatisticsPage();
 				
-		String expected = "2018 FIFA World Cup Russia™ - FIFA.com";
+		String expected = "2018 FIFA World Cup Russia";
 		System.out.println(Driver.getDriver().getTitle());
 		
-		assertEquals(Driver.getDriver().getTitle(), expected);
+		assertTrue(Driver.getDriver().getTitle().contains(expected));
 		// pass --> message the tells us what passed
 		extentLogger.pass("Page title verified");
 	}
