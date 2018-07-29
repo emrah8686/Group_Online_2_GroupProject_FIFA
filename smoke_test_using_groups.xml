@@ -1,17 +1,20 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Smoke tests" verbose="2">
-
-	<test name="Smoke tests">
+	<test name="smoke">
 		<groups>
 			<run>
-				<include name="smoke"></include>
+				<include name="smoke" />
 			</run>
 		</groups>
 
-		<packages>
-			<package name="com.fifa.tests"></package>
-		</packages>
+
+		<classes>
+			<class name="com.fifa.tests.GroupANDTeamsTEST"></class>
+			<class name="com.fifa.tests.StatisticsTest"></class>
+
+		</classes>
 	</test>
 
-
+	<!-- com.fifa.tests.GroupANDTeamsTEST -->
+	<!-- com.fifa.tests.StatisticsTest -->
 </suite>

@@ -2,10 +2,16 @@
 <suite name="Smoke tests" verbose="2">
 
 	<test name="Login smoke tests">
-		<classes>
-			<class name="com.fifa.tests.GroupANDTeamsTEST"></class>
-			
-		</classes>
+		<groups>
+			<run>
+			<!--we are printing certain group methods  from the certain classes-->
+				<include name="smoke"></include>
+			</run>
+		</groups>
+		
+		<packages>
+			<package name="com.fifa.tests"></package>
+		</packages>
 	</test>
 
 <!-- com.fifa.tests.GroupANDTeamsTEST -->  
