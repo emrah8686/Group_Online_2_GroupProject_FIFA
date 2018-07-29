@@ -35,6 +35,8 @@ public class StatisticsTest extends TestBase {
 		// pass --> message the tells us what passed
 		extentLogger.pass("Page title verified");
 	}
+	
+	
 
 
 	
