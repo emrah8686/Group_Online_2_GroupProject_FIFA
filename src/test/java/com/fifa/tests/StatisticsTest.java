@@ -16,10 +16,10 @@ import com.fifa.utilities.Driver;
 
 public class StatisticsTest extends TestBase {
 
-	@Test(priority = 1, groups= {"smoke"})
+	@Test(groups= {"smoke"})
 	public void pageVerification() {
 		// name of the test
-		extentLogger = report.createTest("FIFA website verification test");
+		extentLogger = report.createTest("Test3");
 		// info ()  --> to print a message
 		extentLogger.info("Verifying FIFA Website Title");
 		
@@ -35,8 +35,10 @@ public class StatisticsTest extends TestBase {
 		// pass --> message the tells us what passed
 		extentLogger.pass("Page title verified");
 	}
-
 	
+	
+
+
 	
 
 }
