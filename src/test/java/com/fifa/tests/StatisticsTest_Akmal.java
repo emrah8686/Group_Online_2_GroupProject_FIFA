@@ -98,6 +98,10 @@ public class StatisticsTest_Akmal extends TestBase {
 		assertEquals(statisticsPage.yellowCardsInTournament.getText(), "219");
 		assertEquals(statisticsPage.redCardsInTournament.getText(), "4");
 		assertEquals(statisticsPage.passesCompletedInTournament.getText(), "49651");
+		
+		
+		
+		extentLogger.pass("Tournament Statistics Verified");
 	}
 	
 
