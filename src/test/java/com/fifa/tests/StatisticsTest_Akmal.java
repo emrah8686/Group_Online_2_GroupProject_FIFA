@@ -1,5 +1,7 @@
 package com.fifa.tests;
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertNotEquals;
 import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
@@ -46,6 +48,56 @@ public class StatisticsTest_Akmal extends TestBase {
 		assertEquals(statisticsPage.topScorer3Goals.getText(), "4");
 		
 		extentLogger.pass("Top Scorers' info verified");
+	}
+	
+	@Test(groups= {"smoke"})
+	public void topScorerCountryVerificationNegative() {
+         extentLogger = report.createTest("Test2");
+		
+		extentLogger.info("Verifying the Top 3 Scorers' Country - Negative");
+		
+		
+		HomePage homePage = new HomePage();
+		homePage.headerMenuStatistics.click();
+		
+		StatisticsPage statisticsPage = new StatisticsPage();
+		
+		assertTrue(statisticsPage.headerTopScorers.isDisplayed());
+		
+		
+		assertNotEquals(statisticsPage.topScorer1Country.getText(), "SWEDEN");
+		
+		
+	
+		assertNotEquals(statisticsPage.topScorer2Country.getText(), "MEXICO");
+	
+		
+		
+		assertNotEquals(statisticsPage.topScorer3Country.getText(), "KOREA REPUBLIC");
+		
+		
+		extentLogger.pass("Top Scorers' country verified - Negative ");
+	}
+	
+	@Test(groups= {"smoke"})
+	public void tournamentStatisticsVerification() {
+		
+		extentLogger = report.createTest("Test3");
+			
+		extentLogger.info("Verifying Tournament Statistics");
+		
+		
+		HomePage homePage = new HomePage();
+		homePage.headerMenuStatistics.click();
+		
+		StatisticsPage statisticsPage = new StatisticsPage();
+		
+		assertTrue(statisticsPage.headerTournamentStatistics.isDisplayed());
+		
+		assertEquals(statisticsPage.goalsScoredInTournament.getText(), "169");
+		assertEquals(statisticsPage.yellowCardsInTournament.getText(), "219");
+		assertEquals(statisticsPage.redCardsInTournament.getText(), "4");
+		assertEquals(statisticsPage.passesCompletedInTournament.getText(), "49651");
 	}
 	
 
