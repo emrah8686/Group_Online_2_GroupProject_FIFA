@@ -28,7 +28,29 @@ public class GroupANDTeamsTEST extends TestBase {
 		assertEquals(g.Pana.getText(), "Panama");
 
 		// pass --> message the tells us what passed
-		extentLogger.pass("Page title verified");
+		extentLogger.pass("Group G icon and Group G Teams name verified");
+
+	}
+	@Test(priority = 3, groups = { "smoke" })
+	public void checkGroupE() {
+
+		GroupsPage g = new GroupsPage();
+
+		assertTrue(g.groupIcon.isDisplayed());
+
+		g.groupIcon.click();
+
+		assertTrue(g.groupEicon.isDisplayed());
+
+		g.groupEicon.click();
+
+		assertEquals(g.Brazil.getText(), "Brazil");
+		assertEquals(g.Switzerland.getText(), "Switzerland");
+		assertEquals(g.Serbia.getText(), "Serbia");
+		assertEquals(g.CostaRica.getText(), "Costa Rica");
+
+		// pass --> message the tells us what passed
+		extentLogger.pass("Group E icon and Group E Teams name verified");
 
 	}
 
@@ -38,6 +60,9 @@ public class GroupANDTeamsTEST extends TestBase {
 		GroupsPage g = new GroupsPage();
 		g.teamMain.click();
 		assertEquals(g.allTeam.size(), 32);
+		
+		// pass --> message the tells us what passed
+	extentLogger.pass("All team numbers are verified");
 
 	}
 }
