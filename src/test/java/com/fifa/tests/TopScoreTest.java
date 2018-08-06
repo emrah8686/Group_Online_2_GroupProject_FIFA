@@ -20,11 +20,17 @@ public class TopScoreTest extends TestBase{
 	//mvn test -Drunner=smoke_test_using_groups.xml
 	
 	//SPA 738
-	@Test(priority=1,groups= {"smoke"})
+	@Test(groups= {"smoke"})
 	public void topScorers() {
+		
+		extentLogger = report.createTest("Test1");
+
+		extentLogger.info("Verifying top scorers");
+		
+		
 		topScores = new  PlayersGoalScoredPage();
 		
-		assertEquals(Driver.getDriver().getTitle(),"2018 FIFA World Cup Russiaâ„¢ - FIFA.com");
+		assertEquals(Driver.getDriver().getTitle(),"2018 FIFA World Cup Russia™ - FIFA.com");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		topScores.st.click();
 		topScores.allScorers.click();
@@ -33,11 +39,21 @@ public class TopScoreTest extends TestBase{
 		assertEquals(topScores.playerInfo(2), "Antoine GRIEZMANN 4 0 0");
 		assertEquals(topScores.playerInfo(3), "Romelu LUKAKU 2 1 1");
 		
+		
+		extentLogger.pass("Top scorers verified");
+		
 	}
 	
 	//SPA 740
-	@Test(priority=3,groups= {"smoke"})
+	@Test
 	public void topSaves() {
+		
+		extentLogger = report.createTest("Test2");
+
+		extentLogger.info("Verifying top saves");
+		
+		
+		
 		utils.waitForPageToLoad(5);
 		PlayersTopSavesPage save = new PlayersTopSavesPage();
 		topScores = new  PlayersGoalScoredPage();
@@ -54,12 +70,21 @@ public class TopScoreTest extends TestBase{
 		assertEquals(save.topKeeper(2), "2 Guillermo OCHOA 25");
 		assertEquals(save.topKeeper(3), "3 Kasper SCHMEICHEL 21");
 		
-		
+		extentLogger.pass("Top saves verified");
 		
 	}
 	//SPA 744
-	@Test(priority=3,groups= {"smoke"})
+	@Test
 	public void topCards() {
+		
+		
+		
+		extentLogger = report.createTest("Test3");
+
+		extentLogger.info("Verifying top cards");
+		
+		
+		
 		PlayersCardsPage cards = new PlayersCardsPage();
 		utils.waitForPageToLoad(5);
 		topScores = new  PlayersGoalScoredPage();
@@ -75,11 +100,20 @@ public class TopScoreTest extends TestBase{
 		assertEquals(cards.topCardReceived(1), "1 Carlos SANCHEZ 1 0 1"); 
 		assertEquals(cards.topCardReceived(2), "2 Michael LANG 0 0 1");
 		assertEquals(cards.topCardReceived(3), "3 Jerome BOATENG 0 1 0");
+		
+		
+		extentLogger.pass("Top cards verified");
 
 }
 	//871
-	@Test(priority=4)
+	@Test
 	public void groupTeamC() {
+		
+		extentLogger = report.createTest("Test4");
+
+		extentLogger.info("Verifying Group C teams");
+		
+		
 		utils.waitForPageToLoad(10);
 		topScores = new  PlayersGoalScoredPage();
 		topScores.groupsPage.click();
@@ -97,11 +131,20 @@ public class TopScoreTest extends TestBase{
 		assertEquals("Peru",t3);
 		assertEquals("Australia",t4);
 		
+		
+		extentLogger.pass("Group C teams verified");
+		
 	}
 	
 	//872
-	@Test(priority=5)
+	@Test
 	public void groupTeamD() {
+		
+		extentLogger = report.createTest("Test5");
+
+		extentLogger.info("Verifying Group D teams");
+		
+		
 		utils.waitForPageToLoad(10);
 		topScores = new  PlayersGoalScoredPage();
 		topScores.groupsPage.click();
@@ -119,6 +162,6 @@ public class TopScoreTest extends TestBase{
 		assertEquals("Iceland",t4);
 	
 
-		
+		extentLogger.pass("Group D teams verified");
 	}
 }

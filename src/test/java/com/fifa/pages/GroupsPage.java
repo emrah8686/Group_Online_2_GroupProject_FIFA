@@ -31,6 +31,9 @@ public class GroupsPage {
 
 	@FindBy(xpath = "//span[contains(text(),'Group E')]")
 	public WebElement groupEicon;
+	
+	@FindBy(xpath = "//span[contains(text(),'Group H')]")
+	public WebElement groupHicon;
 
 	@FindBy(xpath = "//td[contains(@class,'fi-table__teamname teamname-nolink')]//span[contains(@class,'fi-t__nText')][contains(text(),'Belgium')]")
 	public WebElement Belg;
@@ -48,6 +51,19 @@ public class GroupsPage {
 	public WebElement Serbia;
 	@FindBy(xpath = "//td[contains(@class,'fi-table__teamname teamname-nolink')]//span[contains(@class,'fi-t__nText')][contains(text(),'Costa Rica')]")
 	public WebElement CostaRica;
+	
+	@FindBy(xpath = "//td[contains(@class,'fi-table__teamname teamname-nolink')]//span[contains(@class,'fi-t__nText')][contains(text(),'Colombia')]")
+	public WebElement Colombia;
+	@FindBy(xpath = "//td[contains(@class,'fi-table__teamname teamname-nolink')]//span[contains(@class,'fi-t__nText')][contains(text(),'Japan')]")
+	public WebElement Japan;
+	@FindBy(xpath = "//td[contains(@class,'fi-table__teamname teamname-nolink')]//span[contains(@class,'fi-t__nText')][contains(text(),'Senegal')]")
+	public WebElement Senegal;
+	@FindBy(xpath = "//td[contains(@class,'fi-table__teamname teamname-nolink')]//span[contains(@class,'fi-t__nText')][contains(text(),'Poland')]")
+	public WebElement Poland;
+	
+	
+	
+	
 
 	//
 

@@ -3,13 +3,15 @@
 	<test name="smoke">
 		<groups>
 			<run>
-				<include name="mine" />
+				<include name="smoke" />
 			</run>
 		</groups>
 
 
 		<classes>
-            <class name="TopScoreTest"></class>
+			<class name="com.fifa.tests.GroupANDTeamsTEST"></class>
+			<class name="com.fifa.tests.StatisticsTest"></class>
+
 		</classes>
 	</test>
 
