@@ -26,6 +26,10 @@ public abstract class TestBase {
 	public static ExtentHtmlReporter htmlReporter;
 	public static ExtentTest extentLogger;
 	
+
+	
+	
+	
 	@BeforeSuite(alwaysRun = true)
 	public void setUpTest() {
 		// actual reporter
