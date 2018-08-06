@@ -27,9 +27,27 @@ public class PlayersGoalScoredPage {
 	@FindBy(xpath= "//div[@class='fi-boxed-page']/div/ul/li[4]/a")
 	public WebElement disciplinary;
 	
+	@FindBy(xpath= "//ul[@class='fi-section-header__nav']/li[3]/a")
+	public WebElement groupsPage;
 	
 	
-	//table/tbody/tr[3]
+	@FindBy(linkText= "Group C")
+	public WebElement groupC;
+	
+	@FindBy(linkText= "Group D")
+	public WebElement groupD;
+	
+	
+	
+	public WebElement teamC(String team) {
+		String xpath = "//table[@id='275079']/tbody/tr/td/div/div[2]/span[.='"+team+"']";
+		return Driver.getDriver().findElement(By.xpath(xpath));
+	}
+	
+	public WebElement teamD(String team) {
+		String xpath = "//table[@id='275081']/tbody/tr/td/div/div[2]/span[.='"+team+"']";
+		return Driver.getDriver().findElement(By.xpath(xpath));
+	}
 	
 	public WebElement playerName(int row){
 		return Driver.getDriver().findElement(By.xpath("//tbody/tr["+row+"]/td[2]"));

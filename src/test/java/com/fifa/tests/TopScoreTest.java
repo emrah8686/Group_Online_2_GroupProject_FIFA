@@ -16,9 +16,11 @@ public class TopScoreTest extends TestBase{
 	
 	PlayersGoalScoredPage topScores;
 	BrowserUtils utils;
+
+	//mvn test -Drunner=smoke_test_using_groups.xml
 	
 	//SPA 738
-	@Test(priority=1,groups= {"topPlayers"})
+	@Test(priority=1,groups= {"smoke"})
 	public void topScorers() {
 		topScores = new  PlayersGoalScoredPage();
 		
@@ -34,9 +36,9 @@ public class TopScoreTest extends TestBase{
 	}
 	
 	//SPA 740
-	@Test(priority=3,groups= {"topPlayers"})
+	@Test(priority=3,groups= {"smoke"})
 	public void topSaves() {
-		utils.waitForPageToLoad(20);
+		utils.waitForPageToLoad(5);
 		PlayersTopSavesPage save = new PlayersTopSavesPage();
 		topScores = new  PlayersGoalScoredPage();
 		topScores.st.click();
@@ -56,10 +58,10 @@ public class TopScoreTest extends TestBase{
 		
 	}
 	//SPA 744
-	@Test(priority=3,groups= {"topPlayers"})
+	@Test(priority=3,groups= {"smoke"})
 	public void topCards() {
 		PlayersCardsPage cards = new PlayersCardsPage();
-		utils.waitForPageToLoad(20);
+		utils.waitForPageToLoad(5);
 		topScores = new  PlayersGoalScoredPage();
 		topScores.st.click();
 		topScores.allScorers.click();
@@ -75,5 +77,48 @@ public class TopScoreTest extends TestBase{
 		assertEquals(cards.topCardReceived(3), "3 Jerome BOATENG 0 1 0");
 
 }
+	//871
+	@Test(priority=4)
+	public void groupTeamC() {
+		utils.waitForPageToLoad(10);
+		topScores = new  PlayersGoalScoredPage();
+		topScores.groupsPage.click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		topScores.groupC.click();
+		
+		String t1 = topScores.teamC("France").getText();
+		String t2 = topScores.teamC("Denmark").getText();
+		String t3 = topScores.teamC("Peru").getText();
+		String t4 = topScores.teamC("Australia").getText();
+		
+		
+		assertEquals("France",t1);
+		assertEquals("Denmark",t2);
+		assertEquals("Peru",t3);
+		assertEquals("Australia",t4);
+		
+	}
 	
+	//872
+	@Test(priority=5)
+	public void groupTeamD() {
+		utils.waitForPageToLoad(10);
+		topScores = new  PlayersGoalScoredPage();
+		topScores.groupsPage.click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		topScores.groupD.click();
+		
+		String t1 = topScores.teamD("Croatia").getText();
+		String t2 = topScores.teamD("Argentina").getText();
+		String t3 = topScores.teamD("Nigeria").getText();
+		String t4 = topScores.teamD("Iceland").getText();
+		
+		assertEquals("Croatia",t1);
+		assertEquals("Argentina",t2);
+		assertEquals("Nigeria",t3);
+		assertEquals("Iceland",t4);
+	
+
+		
+	}
 }
