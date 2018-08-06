@@ -20,10 +20,10 @@ public class TopScoreTest extends TestBase{
 	//mvn test -Drunner=smoke_test_using_groups.xml
 	
 	//SPA 738
-	@Test(groups= {"smoke"})
+	@Test(groups = {"smoke"})
 	public void topScorers() {
 		
-		extentLogger = report.createTest("Test1");
+		extentLogger = report.createTest("Verify Top Scorers");
 
 		extentLogger.info("Verifying top scorers");
 		

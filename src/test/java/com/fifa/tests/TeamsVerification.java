@@ -18,7 +18,7 @@ public class TeamsVerification extends TestBase{
 	public void allTeamsVerification() {
 		
 		String [] all32Teams = {"ARGENTINA", "AUSTRALIA", "BELGIUM", "BRAZIL", "COLOMBIA", "COSTA RICA", "CROATIA", "DENMARK", "EGYPT", "ENGLAND", "FRANCE", "GERMANY", "ICELAND", "IR IRAN", "JAPAN", "KOREA REPUBLIC", "MEXICO", "MOROCCO", "NIGERIA", "PANAMA", "PERU","POLAND", "PORTUGAL", "RUSSIA", "SAUDI ARABIA", "SENEGAL", "SERBIA", "SPAIN", "SWEDEN", "SWITZERLAND", "TUNISIA", "URUGUAY"};		
-		extentLogger = report.createTest("Test1");
+		extentLogger = report.createTest("Verify the names of all teams");
 		
 		extentLogger.info("Verifying all 32 World Cup Teams");
 		

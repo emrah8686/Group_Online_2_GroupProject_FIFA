@@ -20,7 +20,7 @@ public class StatisticsTest extends TestBase {
 	@Test(groups= {"smoke"})
 	public void pageVerification() {
 		// name of the test
-		extentLogger = report.createTest("Test3");
+		extentLogger = report.createTest("Verify the Page Title");
 		// info ()  --> to print a message
 		extentLogger.info("Verifying FIFA Website Title");
 		
@@ -99,7 +99,7 @@ public class StatisticsTest extends TestBase {
 	@Test(groups= {"smoke"})
 	public void tournamentStatisticsVerification() {
 		
-		extentLogger = report.createTest("Test3");
+		extentLogger = report.createTest("Verify Tournament Statistics");
 			
 		extentLogger.info("Verifying Tournament Statistics");
 		

@@ -67,7 +67,7 @@ public class GroupAndTeamsTest extends TestBase {
 	@Test(groups = { "smoke" })
 	public void checkAllTeam() {
 		
-		extentLogger = report.createTest("Test3");
+		extentLogger = report.createTest("Verify the count of all teams");
 
 		extentLogger.info("Verifying all team numbers");
 
