@@ -1,14 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Smoke tests" verbose="2">
 
-	<test name="Login smoke tests">
-<<<<<<< HEAD
-		<classes>
-			<class name="com.fifa.tests.GroupANDTeamsTEST">
-					
-			</class>
-		</classes>
-=======
+	<test name="Smoke tests for checking main functionalities">
 		<groups>
 			<run>
 			<!--we are printing certain group methods  from the certain classes-->
@@ -19,7 +12,6 @@
 		<packages>
 			<package name="com.fifa.tests"></package>
 		</packages>
->>>>>>> branch 'master' of https://github.com/DmitriyOgnev/Group_Online_2_GroupProject_FIFA.git
 	</test>
 
 <!-- com.fifa.tests.GroupANDTeamsTEST -->  

@@ -26,10 +26,6 @@ public abstract class TestBase {
 	public static ExtentHtmlReporter htmlReporter;
 	public static ExtentTest extentLogger;
 	
-
-	
-	
-	
 	@BeforeSuite(alwaysRun = true)
 	public void setUpTest() {
 		// actual reporter
@@ -49,7 +45,7 @@ public abstract class TestBase {
 		report.setSystemInfo("browser", ConfigurationReader.getProperty("browser"));
 		report.setSystemInfo("OS", System.getProperty("os.name"));
 
-		htmlReporter.config().setReportName("Web Orders Automated Test Reports");
+		htmlReporter.config().setReportName("FIFA World Cup Website Automated Test Reports");
 	}
 
 	@BeforeMethod(alwaysRun = true)
@@ -92,3 +88,4 @@ public abstract class TestBase {
 	}
 
 }
+
