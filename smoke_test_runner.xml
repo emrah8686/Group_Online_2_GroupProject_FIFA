@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Smoke tests" verbose="2">
 
-	<test name="Login smoke tests">
+	<test name="Smoke tests for checking main functionalities">
 		<groups>
 			<run>
 			<!--we are printing certain group methods  from the certain classes-->

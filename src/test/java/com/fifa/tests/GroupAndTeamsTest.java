@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import com.fifa.pages.GroupsPage;
 
-public class GroupANDTeamsTEST extends TestBase {
+public class GroupAndTeamsTest extends TestBase {
 
 	@Test
 	public void checkGroupG() {
