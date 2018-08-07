@@ -12,7 +12,7 @@ public class GroupAndTeamsTest extends TestBase {
 	@Test
 	public void checkGroupG() {
 
-		extentLogger = report.createTest("Test1");
+		extentLogger = report.createTest("Group G");
 
 		extentLogger.info("Verifying Group G Team names");
 
@@ -39,7 +39,7 @@ public class GroupAndTeamsTest extends TestBase {
 	@Test
 	public void checkGroupE() {
 		
-		extentLogger = report.createTest("Test2");
+		extentLogger = report.createTest("Group E");
 
 		extentLogger.info("Verifying Group E Team names");
 
@@ -85,7 +85,7 @@ public class GroupAndTeamsTest extends TestBase {
 	public void checkGroupH() {
 		
 		
-		extentLogger = report.createTest("Test4");
+		extentLogger = report.createTest("Group H");
 
 		extentLogger.info("Verifying Group H Team names");
 
