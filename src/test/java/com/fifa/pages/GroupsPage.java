@@ -31,7 +31,7 @@ public class GroupsPage {
 
 	@FindBy(xpath = "//span[contains(text(),'Group E')]")
 	public WebElement groupEicon;
-	
+
 	@FindBy(xpath = "//span[contains(text(),'Group H')]")
 	public WebElement groupHicon;
 
@@ -51,7 +51,7 @@ public class GroupsPage {
 	public WebElement Serbia;
 	@FindBy(xpath = "//td[contains(@class,'fi-table__teamname teamname-nolink')]//span[contains(@class,'fi-t__nText')][contains(text(),'Costa Rica')]")
 	public WebElement CostaRica;
-	
+
 	@FindBy(xpath = "//td[contains(@class,'fi-table__teamname teamname-nolink')]//span[contains(@class,'fi-t__nText')][contains(text(),'Colombia')]")
 	public WebElement Colombia;
 	@FindBy(xpath = "//td[contains(@class,'fi-table__teamname teamname-nolink')]//span[contains(@class,'fi-t__nText')][contains(text(),'Japan')]")
@@ -60,11 +60,22 @@ public class GroupsPage {
 	public WebElement Senegal;
 	@FindBy(xpath = "//td[contains(@class,'fi-table__teamname teamname-nolink')]//span[contains(@class,'fi-t__nText')][contains(text(),'Poland')]")
 	public WebElement Poland;
-	
-	
-	
-	
 
-	//
+	public WebElement getNthTableGroupTitle(int tableIndex) {
+
+		String xPath = "//table[contains(@class, 'fi-table')][" + tableIndex
+				+ "]//p[contains(@class, 'fi-table__caption__title')]";
+
+		return Driver.getDriver().findElement(By.xpath(xPath));
+
+	}
+
+	public WebElement getNthTeamFromTthGroup(int groupIndex, int teamIndex) {
+
+		String xPath = "//table[contains(@class, 'fi-table')][" + groupIndex + "]//tbody/tr[" + teamIndex + "]//span";
+
+		return Driver.getDriver().findElement(By.xpath(xPath));
+
+	}
 
 }
