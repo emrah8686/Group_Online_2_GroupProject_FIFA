@@ -13,7 +13,7 @@ public class GroupAndTeamsTest extends TestBase {
 	@Test
 	public void checkGroupG() {
 
-		extentLogger = report.createTest("Test1");
+		extentLogger = report.createTest("Group G");
 
 		extentLogger.info("Verifying Group G Team names");
 
@@ -39,10 +39,11 @@ public class GroupAndTeamsTest extends TestBase {
 
 	@Test
 	public void checkGroupE() {
-
-		extentLogger = report.createTest("Test2");
+		
+		extentLogger = report.createTest("Group E");
 
 		extentLogger.info("Verifying Group E Team names");
+
 
 		GroupsPage g = new GroupsPage();
 
@@ -66,10 +67,11 @@ public class GroupAndTeamsTest extends TestBase {
 
 	@Test(groups = { "smoke" })
 	public void checkAllTeam() {
-
+		
 		extentLogger = report.createTest("Verify the count of all teams");
 
 		extentLogger.info("Verifying all team numbers");
+
 
 		GroupsPage g = new GroupsPage();
 		g.teamMain.click();
@@ -82,10 +84,12 @@ public class GroupAndTeamsTest extends TestBase {
 
 	@Test
 	public void checkGroupH() {
-
-		extentLogger = report.createTest("Test4");
+		
+		
+		extentLogger = report.createTest("Group H");
 
 		extentLogger.info("Verifying Group H Team names");
+
 
 		GroupsPage g = new GroupsPage();
 
@@ -106,7 +110,7 @@ public class GroupAndTeamsTest extends TestBase {
 		extentLogger.pass("Group H icon and Group H Team names verified");
 
 	}
-
+	
 	@Test(groups = { "smoke" })
 	public void ValidateAllGroupMembers() {
 
@@ -200,3 +204,4 @@ public class GroupAndTeamsTest extends TestBase {
 	}
 
 }
+
