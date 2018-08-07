@@ -30,7 +30,7 @@ public class TopScoreTest extends TestBase{
 		
 		topScores = new  PlayersGoalScoredPage();
 		
-		assertEquals(Driver.getDriver().getTitle(),"2018 FIFA World Cup Russia™ - FIFA.com");
+		assertEquals(Driver.getDriver().getTitle(),"2018 FIFA World Cup Russiaâ„¢ - FIFA.com");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		topScores.st.click();
 		topScores.allScorers.click();
