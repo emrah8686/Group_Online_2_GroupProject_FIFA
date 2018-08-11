@@ -7,9 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeSuite;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -22,20 +22,22 @@ public abstract class TestBase {
 	protected WebDriver driver;
 	protected Actions actions;
 
-	protected ExtentReports report;
-	protected ExtentHtmlReporter htmlReporter;
-	protected ExtentTest extentLogger;
+	public static ExtentReports report;
+	public static ExtentHtmlReporter htmlReporter;
+	public static ExtentTest extentLogger;
 	
-	@BeforeTest(alwaysRun = true)
+	@BeforeSuite(alwaysRun = true)
 	public void setUpTest() {
 		// actual reporter
+		String filePath = System.getProperty("user.dir") + "/test-output/report.html";
+		htmlReporter = new ExtentHtmlReporter(filePath);
+		
 		report = new ExtentReports();
 		// System.getProperty("user.dir") ---> get the path to current project
 		// test-output --> folder in the current project, will be created by testng if
 		// it does not already exist
 		// report.html --> name of the report file
-		String filePath = System.getProperty("user.dir") + "/test-output/report.html";
-		htmlReporter = new ExtentHtmlReporter(filePath);
+		
 
 		report.attachReporter(htmlReporter);
 
@@ -43,7 +45,7 @@ public abstract class TestBase {
 		report.setSystemInfo("browser", ConfigurationReader.getProperty("browser"));
 		report.setSystemInfo("OS", System.getProperty("os.name"));
 
-		htmlReporter.config().setReportName("Web Orders Automated Test Reports");
+		htmlReporter.config().setReportName("FIFA World Cup Website Automated Test Reports");
 	}
 
 	@BeforeMethod(alwaysRun = true)
@@ -56,6 +58,7 @@ public abstract class TestBase {
 		driver.get(ConfigurationReader.getProperty("url"));
 
 	}
+
 
 	@AfterMethod(alwaysRun = true)
 	public void tearDown(ITestResult result) throws IOException {
@@ -79,9 +82,10 @@ public abstract class TestBase {
 		Driver.closeDriver();
 	}
 
-	@AfterTest(alwaysRun = true)
+	@AfterSuite(alwaysRun = true)
 	public void tearDownTest() {
 		report.flush();
 	}
 
 }
+

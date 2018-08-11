@@ -13,7 +13,11 @@ public class HomePage {
 
 	@FindBy(xpath= "//ul[@class='fi-section-header__nav']//a[text()='Statistics']")
 	public WebElement headerMenuStatistics;
+	
+	@FindBy(xpath= "//ul[@class='fi-section-header__nav']//a[text()='Teams']")
+	public WebElement headerMenuTeams;
 
-
+	@FindBy(xpath="//ul[@class='fi-section-header__nav']//a[text()='Groups']")
+	public WebElement headerLinkGroups;
 
 }
